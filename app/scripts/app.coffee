@@ -4,13 +4,34 @@ angular.module('sobrinaTungDotComApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute',
+  'ui.router',
   'sobrinaTungDotComApp:services'
 ])
-  .config ($routeProvider) ->
-    $routeProvider
-      .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-      .otherwise
-        redirectTo: '/'
+  .config( ($stateProvider, $urlRouterProvider) ->
+    #For any unmatched url, redirect to /
+    #will later be login :)
+    $urlRouterProvider.otherwise("/")
+
+    $stateProvider.state('main',
+      url: "/"
+      templateUrl: "views/main.html"
+      controller: "MainCtrl"
+    )
+
+  )
+    
+
+
+
+
+
+
+
+
+
+
+
+      #   templateUrl: 'views/main.html'
+      #   controller: 'MainCtrl'
+      # .otherwise
+      #   redirectTo: '/'
