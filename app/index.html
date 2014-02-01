@@ -12,11 +12,11 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" /> -->
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
     <!-- endbuild -->
   </head>
   <body ng-app="sobrinaTungDotComApp">
@@ -51,6 +51,7 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-router/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -59,6 +60,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/post.js"></script>
+        <script src="scripts/controllers/admin.js"></script>
+        <script src="scripts/directives/navoauth.js"></script>
         <!-- endbuild -->
 </body>
 </html>
