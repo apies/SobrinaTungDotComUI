@@ -10,6 +10,9 @@ describe 'Directive: navOauth', () ->
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
 
+  # it 'should have a controller with links', ->
+  #   $controller.links
+
   # it 'should make hidden element visible', inject ($compile) ->
   #   element = angular.element '<nav-oauth></nav-oauth>'
   #   element = $compile(element) scope

@@ -1,0 +1,10 @@
+{
+  "id": 123,
+  "portrait_link": "http://graph.facebook.com/6713201/picture?type=square",
+  "name": "Alan Pies",
+  "facebook_id": "6713201",
+  "email": "alan.lee.pies@gmail.com",
+  "is_admin": true,
+  "created_at": "2014-02-07T21:27:08.250Z",
+  "updated_at": "2014-02-07T21:27:08.255Z"
+}

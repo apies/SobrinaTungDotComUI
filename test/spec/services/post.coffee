@@ -30,3 +30,12 @@ describe 'Service: Post', () ->
     $httpBackend.expectPUT('/api/posts/1').respond(200, post)
     Post.update(post)
 
+  # iit 'lets see what happens when live server runs', () ->
+  #   Post.query( (post) ->
+  #     console.log(post)
+  #     expect(post).toNotBe null
+  #   )
+    #console.log(post)
+    #expect(post).toNotBe null
+
+

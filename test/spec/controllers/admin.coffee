@@ -7,13 +7,21 @@ describe 'Controller: AdminCtrl', () ->
 
   AdminCtrl = {}
   scope = {}
+  Post = {}
+  $httpBackend = {}
 
   # Initialize the controller and a mock scope
-  beforeEach inject ($controller, $rootScope) ->
+  beforeEach inject ($controller, $rootScope, _Post_, _$httpBackend_) ->
+    $httpBackend = _$httpBackend_
+    Post = _Post_
     scope = $rootScope.$new()
     AdminCtrl = $controller 'AdminCtrl', {
       $scope: scope
     }
+    $httpBackend.whenGET('/api/posts').respond(200, [1,2,3])
 
   it 'should attach a list of awesomeThings to the scope', () ->
-    expect(scope.awesomeThings.length).toBe 3
+    $httpBackend.flush()
+    expect(scope.posts).toNotBeNull
+    expect(scope.posts.length).toBe(3)
+

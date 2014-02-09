@@ -17,8 +17,28 @@
             {{link}}
           </a>
         </li>
+
+       
       </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+         <li class="nav-right">
+          <a ng-if="!currentUser" href="/auth/facebook">LOGIN WITH FACEBOOK</a>
+          <a ng-if="currentUser" href=""> 
+            <img ng-if="currentUser" height="30px" ng-src="{{currentUser.portrait_link}}"> 
+          </a>
+        </li>
+    <!--     <li class="nav-right">
+          <a ng-if="currentUser" href="">{{currentUser.name}}</a>
+        </li> -->
+      </ul>
+
+
+
+
 
     </div><!--/.nav-collapse -->
   </div>
 </div>
+

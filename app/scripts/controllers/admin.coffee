@@ -1,9 +1,11 @@
 'use strict'
 
-angular.module('sobrinaTungDotComApp')
-  .controller 'AdminCtrl', ($scope) ->
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+AdminControl = ($scope, Post) ->
+  $scope.post = []
+  Post.query((posts) ->
+    $scope.posts = posts
+  )
+
+
+angular.module('sobrinaTungDotComApp').controller( 'AdminCtrl', AdminControl)
+

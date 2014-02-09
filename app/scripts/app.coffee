@@ -20,12 +20,15 @@ angular.module('sobrinaTungDotComApp', [
     ).state('login', # i need to write acceptance test for this
       url: "/admin/login/:userId"
       template: ''
-      controller: ($scope, $stateParams, $state, $rootScope) ->
-        $rootScope.currentUser = $stateParams.userId
+      controller: ($scope, $stateParams, $state, $rootScope, User) ->
+        id = $stateParams.userId
+        User.get({id}, (user) ->
+          $rootScope.currentUser = user
+        )
         $state.go('main')
     ).state('admin',
       url: '/admin'
-      template: "<h1>admin</h1>"
+      templateUrl: "views/admin.html"
       controller: 'AdminCtrl'
     )
 

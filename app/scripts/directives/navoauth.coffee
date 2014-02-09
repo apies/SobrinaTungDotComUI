@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('sobrinaTungDotComApp:directives', ['ngRoute'])
   .directive('navOauth', () ->
     templateUrl: "views/nav.html"
@@ -9,16 +7,13 @@ angular.module('sobrinaTungDotComApp:directives', ['ngRoute'])
       $scope.links = $attrs.links.split(/\s+/)
       $scope.brand = $attrs.brand
       $scope.isActive = (locString) ->
-        if $location.path() is locString then 'active' else ''
+        #this seems too complex, im fighting the framework doing something wrong
+        if $location.path() is "/#{locString}" or $location.path() is "#{locString}"  
+          'active' 
+        else 
+          ''
       alias_attrs = JSON.parse($attrs.alias)
       $scope.alias = (attr) ->
-        aliased_attr = alias_attrs[attr]
-        if aliased_attr
-          aliased_attr
-        else
-          attr
-
-      #console.log(JSON.parse(alias_attrs)) 
-    #link: (scope, iElement, iAttrs) ->
-     # ""
+        aliased_attr = alias_attrs["#{attr}"]
+        if aliased_attr then aliased_attr else attr
   )
