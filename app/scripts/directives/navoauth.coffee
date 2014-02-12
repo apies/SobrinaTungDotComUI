@@ -3,6 +3,7 @@ angular.module('sobrinaTungDotComApp:directives', ['ngRoute'])
     templateUrl: "views/nav.html"
     restrict: 'E'
     replace: true
+    #probably need to pull the controller out to test
     controller: ($location, $attrs, $scope) ->
       $scope.links = $attrs.links.split(/\s+/)
       $scope.brand = $attrs.brand

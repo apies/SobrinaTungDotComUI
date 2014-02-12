@@ -29,9 +29,9 @@
             <img ng-if="currentUser" height="30px" ng-src="{{currentUser.portrait_link}}"> 
           </a>
         </li>
-    <!--     <li class="nav-right">
-          <a ng-if="currentUser" href="">{{currentUser.name}}</a>
-        </li> -->
+        <li ng-if="currentUser.is_admin" class="nav-right">
+          <a  href="/#/admin">Admin</a>
+        </li>
       </ul>
 
 

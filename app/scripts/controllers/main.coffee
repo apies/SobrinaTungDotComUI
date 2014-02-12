@@ -1,9 +1,6 @@
-'use strict'
+MainControl = ($scope, Post, $state, $stateParams) ->
+  $scope.posts = Post.query()
 
-angular.module('sobrinaTungDotComApp')
-  .controller 'MainCtrl', ($scope) ->
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+
+angular.module('sobrinaTungDotComApp').
+  controller('MainCtrl', MainControl)

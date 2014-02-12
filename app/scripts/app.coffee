@@ -34,10 +34,14 @@ angular.module('sobrinaTungDotComApp', [
     ).state('admin.list',
       url: "/list"
       templateUrl:"views/_admin_posts_list.html"
-      controller: ($scope, Post) ->
+      controller: ($scope, Post, $sce) ->
         Post.query((posts) ->
           $scope.posts = posts
         )
+        #convert to filter
+        # $scope.toTrusted = (html_code) -> 
+        #   $sce.trustAsHtml(html_code)
+    
     ).state('admin.newPost'
       url: '/new_post',
       templateUrl: "views/_admin_new_post.html"

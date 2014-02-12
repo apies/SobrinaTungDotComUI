@@ -1,8 +1,24 @@
-<div ng-repeat="post in posts" class="well" ng-click="selectPost">
+<div ng-repeat="post in posts" class="panel panel-primary">
   
-  <h1>{{post.name}}!</h1>
-  <span ng-repeat="tag in post.tags" class="label label-success tags">
-    {{tag}}
-  </span>
-  <a class="btn btn-primary" href="/#/admin/edit_post/{{post.id}}">Edit </a>
+  <div class="panel-heading">
+    <h3 class="panel-title">{{post.name}}</h3>
+  </div>
+  <div class="panel-body">
+
+    <div ng-bind-html='post.content' ></div>
+
+    <span ng-repeat="tag in post.tags" class="label label-success tags">
+      {{tag}}
+    </span>
+    <a class="btn btn-primary" href="/#/admin/edit_post/{{post.id}}">Edit </a>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
