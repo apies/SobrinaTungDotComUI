@@ -12,7 +12,8 @@
     ">
       <h1>Manage Posts</h1>
         <div class="btn-group-vertical">
-          <button class="btn btn-primary">New Post</button>
+          <a class="btn btn-warning" ui-sref="admin.newPost">New Post</a>
+          <a class="btn btn-primary" ui-sref="admin.list">View Posts</a>
           <!-- <button class="btn btn-info">Save Post</button> -->
   
         </div>  
@@ -20,12 +21,11 @@
   </div>
 
   <div class="col-xs-6 col-md-8">
+    <div class="well">
     <!-- this needs to be a state -->
-    <div ng-repeat="post in posts" class="well" ng-click="selectPost">
-      <h1>{{post.name}}!</h1>
-      <span ng-repeat="tag in post.tags" class="label label-success tags">{{tag}}</span>
+      <div ui-view></div>
+    <!-- this needs to be a state -->
     </div>
-    <!-- end state -->
-
-  </div>
+  </sdiv>
+  
 </div>

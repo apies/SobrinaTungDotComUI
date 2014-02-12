@@ -5,6 +5,7 @@ angular.module('sobrinaTungDotComApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
+  'ui.tinymce',
   'sobrinaTungDotComApp:services',
   'sobrinaTungDotComApp:directives'
 ])
@@ -30,6 +31,21 @@ angular.module('sobrinaTungDotComApp', [
       url: '/admin'
       templateUrl: "views/admin.html"
       controller: 'AdminCtrl'
+    ).state('admin.list',
+      url: "/list"
+      templateUrl:"views/_admin_posts_list.html"
+      controller: ($scope, Post) ->
+        Post.query((posts) ->
+          $scope.posts = posts
+        )
+    ).state('admin.newPost'
+      url: '/new_post',
+      templateUrl: "views/_admin_new_post.html"
+      controller: 'NewPostCtrl'
+    ).state('admin.editPost',
+      url: '/edit_post/:post_id'
+      templateUrl: "views/_admin_new_post.html"
+      controller: 'EditPostCtrl'
     )
 
   )

@@ -11,4 +11,5 @@ angular.module('sobrinaTungDotComApp:services').factory( 'Post', ['PostBase', (P
 
     postProcess: (attrs) -> 
 
+
 ])

@@ -1,0 +1,7 @@
+<div ng-repeat="post in posts" class="well" ng-click="selectPost">
+  <h1>{{post.name}}!</h1>
+  <span ng-repeat="tag in post.tags" class="label label-success tags">
+    {{tag}}
+  </span>
+  <a class="btn btn-primary" href="/#/admin/edit_post/{{post.id}}">Edit </a>
+</div>

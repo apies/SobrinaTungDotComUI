@@ -18,6 +18,8 @@ module.exports = function(config) {
       'app/bower_components/angular-sanitize/angular-sanitize.js',
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_broken_components/angular-ui-router.js',
+      'app/bower_components/tinymce/tinymce.min.js',
+      'app/bower_components/angular-ui-tinymce/src/tinymce.js',
       'app/scripts/*.coffee',
       'app/scripts/**/*.coffee',
       'test/mock/**/*.coffee',
