@@ -7,7 +7,8 @@ angular.module('sobrinaTungDotComApp', [
   'ui.router',
   'ui.tinymce',
   'sobrinaTungDotComApp:services',
-  'sobrinaTungDotComApp:directives'
+  'sobrinaTungDotComApp:directives',
+  'ngRoute'
 ])
   .config( ($stateProvider, $urlRouterProvider) ->
     #For any unmatched url, redirect to /
@@ -18,15 +19,19 @@ angular.module('sobrinaTungDotComApp', [
       url: "/"
       templateUrl: "views/main.html"
       controller: "MainCtrl"
+      # views: [
+      #   "navController": {template: "views/nav.html"}
+      # ]
     ).state('login', # i need to write acceptance test for this
       url: "/admin/login/:userId"
       template: ''
-      controller: ($scope, $stateParams, $state, $rootScope, User) ->
-        id = $stateParams.userId
-        User.get({id}, (user) ->
-          $rootScope.currentUser = user
-        )
-        $state.go('main')
+      controller: 'LoginCtrl'
+      # controller: ($rootScope, $stateParams, $state, User) ->
+      #   id = $stateParams.userId
+      #   User.get({id}, (user) ->
+      #     $rootScope.currentUser = user
+      #     $state.go('main')
+      #   )
     ).state('admin',
       url: '/admin'
       templateUrl: "views/admin.html"

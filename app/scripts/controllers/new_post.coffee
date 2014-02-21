@@ -22,4 +22,9 @@ NewPostControl = ($scope, Post, $state) ->
 
 
 angular.module('sobrinaTungDotComApp').
-  controller('NewPostCtrl', NewPostControl)
+  controller('NewPostCtrl',[
+    '$scope',
+    'Post',
+    '$state', 
+    NewPostControl
+  ])

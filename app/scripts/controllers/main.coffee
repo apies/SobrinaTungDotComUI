@@ -3,4 +3,10 @@ MainControl = ($scope, Post, $state, $stateParams) ->
 
 
 angular.module('sobrinaTungDotComApp').
-  controller('MainCtrl', MainControl)
+  controller('MainCtrl', [
+    '$scope',
+    'Post',
+    '$state',
+    '$stateParams', 
+    MainControl
+  ])

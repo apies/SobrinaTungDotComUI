@@ -1,6 +1,7 @@
 'use strict'
 
 AdminControl = ($scope, Post) ->
+  $scope.nothing = 'nothing'
 
   # $scope.post = []
   # Post.query((posts) ->
@@ -8,5 +9,8 @@ AdminControl = ($scope, Post) ->
   # )
 
 
-angular.module('sobrinaTungDotComApp').controller( 'AdminCtrl', AdminControl)
+angular.module('sobrinaTungDotComApp').controller( 'AdminCtrl',[
+  '$scope', 
+  AdminControl
+])
 

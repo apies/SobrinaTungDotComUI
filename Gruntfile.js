@@ -356,7 +356,10 @@ module.exports = function (grunt) {
     //         '<%= yeoman.dist %>/scripts/scripts.js'
     //       ]
     //     }
-    //   }
+    //   },
+    //   options: {
+    //     mangle: false
+    //   },
     // },
     // concat: {
     //   dist: {}

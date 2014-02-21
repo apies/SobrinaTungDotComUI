@@ -23,5 +23,11 @@ EditPostControl = ($scope, Post, $state, $stateParams) ->
 
 
 angular.module('sobrinaTungDotComApp').
-  controller('EditPostCtrl', EditPostControl)
+  controller('EditPostCtrl',[
+    '$scope',
+    'Post',
+    '$state',
+    '$stateParams', 
+    EditPostControl
+  ])
 
