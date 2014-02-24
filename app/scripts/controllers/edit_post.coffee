@@ -1,5 +1,8 @@
 EditPostControl = ($scope, Post, $state, $stateParams) ->
-  $scope.post = Post.get(id: $stateParams.id)
+
+  $scope.post = Post.get(id: $stateParams.post_id)
+  
+
   
   $scope.savePost = ->
     $scope.post.$update( (post, headers) ->

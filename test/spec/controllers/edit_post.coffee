@@ -17,7 +17,7 @@ describe 'Controller: EditPostCtrl', () ->
     $state = _$state_
     $stateParams = _$stateParams_
     scope = $rootScope.$new()
-    $stateParams.id = 1
+    $stateParams.post_id = 1
     EditPostCtrl = $controller 'EditPostCtrl', {
       $scope: scope
     }

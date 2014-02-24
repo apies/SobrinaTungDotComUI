@@ -7,7 +7,6 @@ angular.module('sobrinaTungDotComApp', [
   'ui.router',
   'ui.tinymce',
   'sobrinaTungDotComApp:services',
-  'sobrinaTungDotComApp:directives',
   'ngRoute'
 ])
   .config( ($stateProvider, $urlRouterProvider) ->
@@ -39,10 +38,11 @@ angular.module('sobrinaTungDotComApp', [
     ).state('admin.list',
       url: "/list"
       templateUrl:"views/_admin_posts_list.html"
-      controller: ($scope, Post, $sce) ->
+      controller: [ '$scope', 'Post', ($scope, Post) ->
         Post.query((posts) ->
           $scope.posts = posts
         )
+      ]
         #convert to filter
         # $scope.toTrusted = (html_code) -> 
         #   $sce.trustAsHtml(html_code)
