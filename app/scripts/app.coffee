@@ -18,19 +18,13 @@ angular.module('sobrinaTungDotComApp', [
       url: "/"
       templateUrl: "views/main.html"
       controller: "MainCtrl"
-      # views: [
-      #   "navController": {template: "views/nav.html"}
-      # ]
     ).state('login', # i need to write acceptance test for this
       url: "/admin/login/:userId"
       template: ''
       controller: 'LoginCtrl'
-      # controller: ($rootScope, $stateParams, $state, User) ->
-      #   id = $stateParams.userId
-      #   User.get({id}, (user) ->
-      #     $rootScope.currentUser = user
-      #     $state.go('main')
-      #   )
+    ).state('writing_samples',
+      url: '/writing_samples'
+      templateUrl: 'views/writing_samples.html'
     ).state('admin',
       url: '/admin'
       templateUrl: "views/admin.html"
@@ -42,11 +36,7 @@ angular.module('sobrinaTungDotComApp', [
         Post.query((posts) ->
           $scope.posts = posts
         )
-      ]
-        #convert to filter
-        # $scope.toTrusted = (html_code) -> 
-        #   $sce.trustAsHtml(html_code)
-    
+      ]    
     ).state('admin.newPost'
       url: '/new_post',
       templateUrl: "views/_admin_new_post.html"
