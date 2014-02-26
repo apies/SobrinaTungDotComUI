@@ -1,4 +1,4 @@
-AdminControl = ($scope, Post) ->
+PostsListControl = ($scope, Post) ->
   $scope.deletePost = (post) ->
     post.$delete(
       (response) ->
@@ -9,9 +9,8 @@ AdminControl = ($scope, Post) ->
     )
 
 
-angular.module('sobrinaTungDotComApp').controller( 'AdminCtrl',[
+angular.module('sobrinaTungDotComApp').controller( 'PostsListCtrl',[
   '$scope',
   'Post', 
-  AdminControl
+  PostsListControl
 ])
-

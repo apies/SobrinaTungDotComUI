@@ -25,6 +25,9 @@ angular.module('sobrinaTungDotComApp', [
     ).state('writing_samples',
       url: '/writing_samples'
       templateUrl: 'views/writing_samples.html'
+    ).state( 'writing_samples.blog',
+      url: '/writing_samples/blog'
+      templateUrl: 'my_blog.html'
     ).state('admin',
       url: '/admin'
       templateUrl: "views/admin.html"
